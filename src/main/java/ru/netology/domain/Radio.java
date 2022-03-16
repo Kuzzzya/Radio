@@ -2,15 +2,19 @@ package ru.netology.domain;
 
 public class Radio {
     private int currentStation;
+    private int numberOfStation = 10;
     private int currentVolume;
+
+    public Radio() {
+    }
+
+    public Radio(int numberOfStation) {
+        this.numberOfStation = numberOfStation;
+    }
 
     public int getCurrentStation() {
         return currentStation;
     }
-
-//    public void setCurrentStation(int currentStation) {
-//        this.currentStation = currentStation;
-//    }
 
     public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation > 9) {
@@ -19,6 +23,18 @@ public class Radio {
         if (newCurrentStation < 0) {
             return;
         }
+
+        currentStation = newCurrentStation;
+    }
+
+    public void setCurrentStationRemoteControl(int newCurrentStation) {
+        if (newCurrentStation > 9) {
+            return;
+        }
+        if (newCurrentStation < 0) {
+            return;
+        }
+
 
         currentStation = newCurrentStation;
     }
@@ -46,8 +62,8 @@ public class Radio {
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume > 10) {
-            newCurrentVolume = 10;
+        if (newCurrentVolume > 100) {
+            newCurrentVolume = 100;
         }
         if (newCurrentVolume < 0) {
             newCurrentVolume = 0;
@@ -57,10 +73,10 @@ public class Radio {
     }
 
     public void increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
         }
-        if (currentVolume == 10) {
+        if (currentVolume == 100) {
             return;
         }
     }
@@ -71,11 +87,3 @@ public class Radio {
         }
     }
 }
-//    public int getId() { return id; }
-//    public void setId(int id) { this.id = id; }
-//    public String getName() { return name; }
-//    public void setName(String name) { this.name = name; }
-//    public int getMaxTemperature() { return maxTemperature; }
-//    public void setMaxTemperature(int maxTemperature) { this.maxTemperature = maxTemperature; }
-//    public int getMinTemperature() { return minTemperature; }
-//    public void setMinTemperature(int minTemperature) { this.minTemperature = minTemperature; }
