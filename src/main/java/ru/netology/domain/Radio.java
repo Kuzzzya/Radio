@@ -25,21 +25,17 @@ public class Radio {
 
     public void nextStation() {
         currentStation = currentStation + 1;
-        {
-            if (currentStation != 9) {
-                currentStation = 0;
-            }
+        if (currentStation > 9) {
+        currentStation = 0;
         }
     }
 
     public void previouslyCurrentStation() {
         currentStation = currentStation - 1;
-        {
-            if (currentStation < 0) {
-                currentStation = 9;
-            }
+        if (currentStation < 0) {
+        currentStation = 9;
         }
-    }
+   }
 
     public int getCurrentVolume() {
         return currentVolume;
