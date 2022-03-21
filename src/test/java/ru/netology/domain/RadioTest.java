@@ -33,6 +33,15 @@ class RadioTest {
     }
 
     @Test
+    public void testSetRemoteCurrentStation() {
+        Radio radio = new Radio(1);
+        radio.setCurrentStationRemoteControl(500);
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+        assertEquals(expected, actual); 
+    }
+
+    @Test
     public void testNextStation() {
         Radio radio = new Radio(10);
         radio.setCurrentStation(10);
