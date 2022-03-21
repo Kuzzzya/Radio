@@ -17,7 +17,7 @@ public class Radio {
     }
 
     public void setCurrentStation(int newCurrentStation) {
-        if (newCurrentStation > 9) {
+        if (newCurrentStation > numberOfStation) {
             return;
         }
         if (newCurrentStation < 0) {
@@ -28,21 +28,20 @@ public class Radio {
     }
 
     public void setCurrentStationRemoteControl(int newCurrentStation) {
-        if (newCurrentStation > 9) {
+        if (newCurrentStation > numberOfStation) {
             return;
         }
         if (newCurrentStation < 0) {
             return;
         }
 
-
-        currentStation = newCurrentStation;
+            currentStation = newCurrentStation;
     }
 
     public void nextStation() {
         currentStation = currentStation + 1;
         {
-            if (currentStation != 9) {
+            if (currentStation >= numberOfStation) {
                 currentStation = 0;
             }
         }

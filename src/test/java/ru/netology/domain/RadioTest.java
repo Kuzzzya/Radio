@@ -7,25 +7,25 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioTest {
     @Test
     public void testSetCurrentStation() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(9);
-        int expected = 9;
-        int actual = radio.getCurrentStation();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testSetCurrentStation2() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(10);
+        Radio radio = new Radio(10);
+        radio.setCurrentStation(11);
         int expected = 0;
         int actual = radio.getCurrentStation();
         assertEquals(expected, actual);
     }
 
     @Test
+    public void testSetCurrentStation2() {
+        Radio radio = new Radio(150);
+        radio.setCurrentStation(25);
+        int expected = 25;
+        int actual = radio.getCurrentStation();
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testSetCurrentStation3() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(1000000);
         radio.setCurrentStation(-5);
         int expected = 0;
         int actual = radio.getCurrentStation();
@@ -34,8 +34,8 @@ class RadioTest {
 
     @Test
     public void testNextStation() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(9);
+        Radio radio = new Radio(10);
+        radio.setCurrentStation(10);
         radio.nextStation();
         int expected = 0;
         int actual = radio.getCurrentStation();
@@ -85,7 +85,7 @@ class RadioTest {
     public void testRemoteControl2() {
         Radio radio = new Radio(10);
         radio.setCurrentStationRemoteControl(10);
-        int expected = 0;
+        int expected = 10;
         int actual = radio.getCurrentStation();
         assertEquals(expected, actual);
     }
