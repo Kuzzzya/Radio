@@ -8,9 +8,6 @@ public class Radio {
         return currentStation;
     }
 
-//    public void setCurrentStation(int currentStation) {
-//        this.currentStation = currentStation;
-//    }
 
     public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation > 9) {
@@ -56,6 +53,7 @@ public class Radio {
         if (currentVolume < 10) {
             currentVolume = currentVolume + 1;
         }
+
         if (currentVolume == 10) {
             return;
         }
@@ -67,11 +65,3 @@ public class Radio {
         }
     }
 }
-//    public int getId() { return id; }
-//    public void setId(int id) { this.id = id; }
-//    public String getName() { return name; }
-//    public void setName(String name) { this.name = name; }
-//    public int getMaxTemperature() { return maxTemperature; }
-//    public void setMaxTemperature(int maxTemperature) { this.maxTemperature = maxTemperature; }
-//    public int getMinTemperature() { return minTemperature; }
-//    public void setMinTemperature(int minTemperature) { this.minTemperature = minTemperature; }
